@@ -7,10 +7,9 @@ import streamlit_authenticator as stauth
 # --- User Authentication ---
 names = ["Devi Charan"]
 usernames = ["charan"]
-passwords = ["1234"]  # Plaintext (for demo). Use hashed passwords in real apps.
-
-hashed_passwords = stauth.Hasher(passwords).generate()
+passwords = ["1234"]  # Plaintext (for demo). Use hashed passwords in real hashed_passwords = stauth.Hasher(passwords).generate()
 authenticator = stauth.Authenticate(names, usernames, hashed_passwords, "stock_dashboard", "abcdef", cookie_expiry_days=1)
+
 
 name, authentication_status, username = authenticator.login("Login", "main")
 
